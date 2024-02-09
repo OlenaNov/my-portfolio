@@ -6,8 +6,11 @@ export const Wrapper = styled.li`
 display: flex;
 gap: 48px;
 
-margin: 8px;
 padding: 4px;
+
+&: not(:last-child) {
+    margin-bottom: 8px;
+}
 
 background: #add8e6;
 border-radius: 12px;

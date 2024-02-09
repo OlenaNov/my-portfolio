@@ -1,15 +1,15 @@
 import Button from "../Button/Button";
-import { Wrapper } from "./Header.styled"
+import { Navigation, Wrapper } from "./Header.styled"
 
-export const Header = () => {
+export const Header = ({ openOrder, isLoading }) => {
 
  
  return (
     <Wrapper>
-        <nav>
+        <Navigation>
             <p>Welcome to Purchase orders</p>
-            <Button />
-        </nav>
+            <Button openOrder={openOrder} isLoading={isLoading} />
+        </Navigation>
     </Wrapper>
   );
 };

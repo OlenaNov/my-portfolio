@@ -31,7 +31,7 @@ export const Main = () => {
 };
 
     useEffect(() => {
-        console.log("It's useEffect!!!!");
+        // console.log("It's useEffect!!!!");
         searchItems();
     }, [])
 

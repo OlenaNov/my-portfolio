@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+
 import { List, Wrapper } from "./OrderContentList.styled";
 import Item from "../Item/Item";
 import { Wrapper as WrapperLi, Name, Price, BasketIcon } from "../Item/Item.styled";
