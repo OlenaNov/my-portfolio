@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
 import { OrderButton, IconOrder } from "./Button.styled";
-import { fetchOrder } from "../../utilites/api";
+// import { fetchOrderList } from "../../utilites/api";
 
-export const Button = ({ openOrder, isLoading }) => {
+export const Button = ({ openOrderList, isLoading }) => {
 
     // const [isLoading, setIsLoading] = useState(false);
     // const [order, setOrder] = useState([]);
 
-    // const openOrder = async () => {
+    // const openOrderList = async () => {
     //     try {
     //         console.log("Order is open!");
     //         setIsLoading(true);
-    //         const result = await fetchOrder();
+    //         const result = await fetchOrderList();
     //         console.log(result);
 
     //         setOrder(result);
@@ -33,7 +33,7 @@ export const Button = ({ openOrder, isLoading }) => {
     // }, [order]);
 
     return (
-        <OrderButton type="button" onClick={openOrder} disabled={isLoading}>
+        <OrderButton type="button" onClick={openOrderList} disabled={isLoading}>
             <IconOrder />
         </OrderButton>
     );

@@ -16,7 +16,7 @@ export const fetchItems = async () => {
 
 };
 
-export const fetchOrder = async () => {
+export const fetchOrderList = async () => {
 
     try {
         const req = await axios.get('/po-list');
@@ -25,5 +25,29 @@ export const fetchOrder = async () => {
       } catch (err) {
         console.error('Error:', err.message);
       };
+
+};
+
+export const fetchOrder = async () => {
+
+  try {
+      const req = await axios.get('/orders');
+      return req.data;
+
+    } catch (err) {
+      console.error('Error:', err.message);
+    };
+
+};
+
+export const addItem = async () => {
+
+  try {
+      const req = await axios.put('/orders');
+      return req.data;
+
+    } catch (err) {
+      console.error('Error:', err.message);
+    };
 
 };

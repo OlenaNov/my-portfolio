@@ -1,22 +1,22 @@
 import Order from "../Order/Order";
-import { Wrapper as WrapperLi, Date, Name, Total, TotalPrice } from "../Order/Order.styled";
-import { List, Wrapper } from "./OrderList.styled";
+import { Date, Name, Total, TotalPrice, TitleWrapper } from "../Order/Order.styled";
+import { Wrapper, List } from "./OrderList.styled";
 
 export const OrderList = ({ orderList }) => {
- console.log(orderList);
+//  console.log(orderList);
  
 
  return (
     <Wrapper>
         <List>
-        <WrapperLi>
+        <TitleWrapper>
             <Name>Name</Name>
             <Date>Date</Date>
             <Total>Total</Total>
             <TotalPrice>Total Price</TotalPrice>
             <Name>Status</Name>
             <Name>Open more</Name>
-        </WrapperLi>
+        </TitleWrapper>
             {orderList.map(order => (
               <Order
               key={order.name}
