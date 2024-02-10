@@ -5,6 +5,7 @@ import Main from '../Main'
 import './App.css'
 import Modal from '../Modal';
 import { fetchOrder } from '../../utilites/api';
+import OrderList from '../OrderList/OrderList';
 
 function App() {
 
@@ -41,12 +42,16 @@ useEffect(() => {
   };
 
   console.log("Updated Order:", order);
+  console.log('order.length:', order.length);
+  console.log('showModal:', showModal);
+
+  
 }, [order]);
 
   return (
     <>
       <Header  openOrder={openOrder} isLoading={isLoading}  />
-      {showModal && <Modal toggle={toggleModal} children={() => <div>MODAL IS OPEN</div>} />}
+      {showModal && order.length && <Modal toggle={toggleModal} children={() => <OrderList orderList={order} />} />}
       <Main />
     </>
   )

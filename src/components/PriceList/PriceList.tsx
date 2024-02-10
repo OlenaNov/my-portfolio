@@ -1,9 +1,9 @@
 
-import { List, Wrapper } from "./OrderContentList.styled";
-import Item from "../Item/Item";
+import { List, Wrapper } from "./PriceList.styled";
+import Item from "../Item";
 import { Wrapper as WrapperLi, Name, Price, BasketIcon } from "../Item/Item.styled";
 
-export const OrderContentList = ({ itemsList }) => {
+export const PriceList = ({ itemsList }) => {
  
 
  return (
@@ -25,4 +25,4 @@ export const OrderContentList = ({ itemsList }) => {
   );
 };
 
-export default OrderContentList;
+export default PriceList;

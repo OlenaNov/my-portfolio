@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import OrderContentList from "../OrderContentList/OrderContentList";
+import PriceList from "../PriceList/PriceList";
 import { Wrapper } from "./Main.styled";
 import { fetchItems } from "../../utilites/api";
 
@@ -37,7 +37,7 @@ export const Main = () => {
 
  return (
     <Wrapper>
-        {items.length ? <OrderContentList itemsList={items} /> : null }
+        {items.length ? <PriceList itemsList={items} /> : null }
     </Wrapper>
   );
 };
