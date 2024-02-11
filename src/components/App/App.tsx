@@ -7,8 +7,28 @@ import Modal from '../Modal';
 import { fetchOrderList } from '../../utilites/api';
 import OrderList from '../OrderList/OrderList';
 
-function App() {
+const CUURENTORDER = {
+  "name": "order-10",
+  "date": "10.02.24",
+  "total": "2",
+  "totalPrice": "2",
+  "status": "false",
+  "items": [
+    {
+          "name": "item-1",
+          "amount": "2",
+          "price": "1"
+      },
+      {
+        "name": "item-2",
+        "amount": "1",
+        "price": "2"
+    }
+    ]
+};
 
+function App() {
+  const [currentOrder, setCurrentOrder] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [order, setOrder] = useState([]);
@@ -48,11 +68,15 @@ useEffect(() => {
   
 }, [order]);
 
+useEffect(() => {
+  console.log(currentOrder);
+}, [currentOrder]);
+
   return (
     <>
-      <Header  openOrderList={openOrderList} isLoading={isLoading}  />
+      <Header  openOrderList={openOrderList} isLoading={isLoading} currentOrder={currentOrder?.name ?? null} />
       {showModal && order.length && <Modal toggle={toggleModal} children={() => <OrderList orderList={order} />} />}
-      <Main />
+      <Main setCurrentOrder = {setCurrentOrder} currentOrder={currentOrder} />
     </>
   )
 }

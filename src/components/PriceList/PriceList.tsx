@@ -3,7 +3,7 @@ import { List, Wrapper } from "./PriceList.styled";
 import Item from "../Item";
 import { Wrapper as WrapperLi, Name, Price, BasketIcon } from "../Item/Item.styled";
 
-export const PriceList = ({ itemsList }) => {
+export const PriceList = ({ itemsList, setCurrentOrder, currentOrder }) => {
  
 
  return (
@@ -17,7 +17,9 @@ export const PriceList = ({ itemsList }) => {
             {itemsList.map(item => (
               <Item
               key={item.name}
-              itemdata={item} 
+              itemdata={item}
+              setCurrentOrder={setCurrentOrder} 
+              currentOrder={currentOrder}
           />
             ))}
         </List>

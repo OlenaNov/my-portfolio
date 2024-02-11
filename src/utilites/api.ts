@@ -40,10 +40,10 @@ export const fetchOrder = async () => {
 
 };
 
-export const addItem = async () => {
+export const fetchAddItem = async ({ name }) => {
 
   try {
-      const req = await axios.put('/orders');
+      const req = await axios.post('/orders');
       return req.data;
 
     } catch (err) {

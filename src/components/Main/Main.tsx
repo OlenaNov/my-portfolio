@@ -3,7 +3,7 @@ import PriceList from "../PriceList/PriceList";
 import { Wrapper } from "./Main.styled";
 import { fetchItems } from "../../utilites/api";
 
-export const Main = () => {
+export const Main = ({ setCurrentOrder, currentOrder }) => {
 
     const [isLoading, setIsLoading] = useState(true);
     const [items, setItems] = useState([]);
@@ -37,7 +37,11 @@ export const Main = () => {
 
  return (
     <Wrapper>
-        {items.length ? <PriceList itemsList={items} /> : null }
+        {items.length ? <PriceList 
+        itemsList={items} 
+        setCurrentOrder={setCurrentOrder} 
+        currentOrder={currentOrder} 
+        /> : null }
     </Wrapper>
   );
 };
